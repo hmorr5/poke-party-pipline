@@ -14,8 +14,8 @@ function App() {
             <span 
               style={{fontWeight:"600", color:"#61dafb"}}
               className="reactText"
-              > React! </span>
-          <br /> and developing my own future with programming
+              > React </span>
+          <br /> for dummies
         </p>
         <a
           className="App-link"
