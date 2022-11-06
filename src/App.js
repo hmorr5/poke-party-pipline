@@ -10,13 +10,13 @@ function App() {
         <img src={"https://whatemoji.org/wp-content/uploads/2020/07/Face-With-Open-Mouth-Emoji.png"} className="App-logo" alt="emote" />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Playing with 
+          PokeParty builder in 
             <span 
               style={{fontWeight:"600", color:"#61dafb"}}
               className="reactText"
-              >React
+              > React
             </span>
-          <br /> with friends.
+          <br /> and with friends.
         </p>
         <a
           className="App-link"
