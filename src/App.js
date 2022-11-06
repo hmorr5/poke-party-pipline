@@ -10,12 +10,13 @@ function App() {
         <img src={"https://whatemoji.org/wp-content/uploads/2020/07/Face-With-Open-Mouth-Emoji.png"} className="App-logo" alt="emote" />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Working with
+          Playing with 
             <span 
               style={{fontWeight:"600", color:"#61dafb"}}
               className="reactText"
-              > React </span>
-          <br /> for dummies
+              >React
+            </span>
+          <br /> with friends.
         </p>
         <a
           className="App-link"
