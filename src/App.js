@@ -9,6 +9,7 @@ function App() {
       <header id="47455" className="App-header">
         <img src={"https://whatemoji.org/wp-content/uploads/2020/07/Face-With-Open-Mouth-Emoji.png"} className="App-logo" alt="emote" />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <h1>Richie is Gay</h1>
         <p>
           Working with
             <span 
