@@ -1,14 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
 import { getByDisplayValue } from '@testing-library/react';
-import Content01 from './assets/content_01.js'
 
 function App() {
   return (
     <div className="App">
       <header id="47455" className="App-header">
-        <img src={"https://whatemoji.org/wp-content/uploads/2020/07/Face-With-Open-Mouth-Emoji.png"} className="App-logo" alt="emote" />
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           PokeParty builder in 
             <span 
