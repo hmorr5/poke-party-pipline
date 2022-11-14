@@ -133,3 +133,39 @@ body {
   animation: App-logo-spin infinite 1.2s linear;
   padding-right: 20px;
 }
+
+input[type="text"]{
+  border-width: 0px 0px 0px 0px;
+  box-shadow: #23AFCC inset 0px -2px 0px 0px;
+  border-radius: 8px 0px 0px 8px ;
+  background: none;
+  background-color: #524e4d4b;
+  color: white;
+  height: 28px;
+  width: 300px;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+
+input[type="submit"], button{
+  border-width: 0px;
+  border-radius: 0px 8px 8px 0px ;
+  text-transform: uppercase;
+  background-color: #524E4D;
+  background: solid;
+  color: #23AFCC;
+  font-weight: bold;
+  margin: 0px;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+  padding: 0px;
+}
+
+input[type="submit"]:hover, button:hover{
+  background-color: #23AFCC;
+  background: solid;
+  color: white;
+  transition-duration: 200ms;
+  text-align: center;
+}

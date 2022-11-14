@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import Content01 from './assets/Content01';
 import { getByDisplayValue } from '@testing-library/react';
 
 function App() {
