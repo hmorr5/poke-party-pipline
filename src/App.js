@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import Content01 from './assets/Content01';
+import PokeSearchPage from './pages/PokeSearch';
 import { getByDisplayValue } from '@testing-library/react';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
               className="reactText"
               > React
             </span>
-          <br /> and with friends.
+          <br /> (with friends.)
         </p>
         <a
           className="App-link"
@@ -26,7 +26,7 @@ function App() {
           Link to the React site for some starting information!
         </a>
       </header>
-      <Content01 />
+      <PokeSearchPage />
     </div>
   );
 }

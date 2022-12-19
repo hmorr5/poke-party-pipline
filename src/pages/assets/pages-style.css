@@ -1,0 +1,92 @@
+.Main-PokeSearchPage {
+	display: flex;
+	padding-left: 5%;
+	padding-right: 5%;
+	justify-content: space-between;
+	max-width: 1920px;
+	background-color: hsl(220deg 13% 15%);
+	height: 65vh;
+}
+
+.PokeSearchSection {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.Pokemon-slot {
+	display: flex;
+	justify-content: center;
+	height: 30px;
+	width: 350px;
+	align-items: center;
+	border-bottom: solid #5cdafb 2px;
+	border-left: solid #5cdafb 2px;
+	border-radius: 12px;
+	margin-top: 40px;
+	background-color: #34363c;
+	font-size: 0.7em;
+	cursor: pointer;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
+.Pokemon-slot:hover {
+	background-color: #524e4d;
+}
+
+section {
+	margin: 5vh 5vw;
+}
+
+section#c01s01 {
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+}
+
+/* Dropdown Styling*/
+/*the container must be positioned relative:*/
+.autoComplete {
+	position: relative;
+	display: inline-block;
+}
+
+.autoComplete-items {
+	position: static;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+
+.autoComplete-items div {
+    padding: 5px;
+	display: flex;
+	justify-content: center;
+	width: 292px;
+	align-items: center;
+	border-bottom: solid #23afcc 1px;
+	border-left: solid #23afcc 3px;
+	border-radius: 0px 0px 8px 5px;
+	background-color: #34363c;
+	font-size: 0.8em;
+	cursor: pointer;
+}
+
+/*when hovering an item:*/
+.autoComplete-items div:hover {
+	background-color: #524e4d;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autoComplete-active {
+	background-color: DodgerBlue !important;
+	color: #ffffff;
+}
