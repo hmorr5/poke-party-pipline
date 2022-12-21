@@ -5,7 +5,7 @@
 	justify-content: space-between;
 	max-width: 1920px;
 	background-color: hsl(220deg 13% 15%);
-	height: 65vh;
+	height: 75vh;
 }
 
 .PokeSearchSection {
@@ -16,18 +16,28 @@
 	padding-right: 5%;
 }
 
+input#pokeSearch{
+	margin: 0;
+	border-top-left-radius: 10px;
+}
+
+input#pokeSearch:focus {
+    color: black;
+}
+
 .Pokemon-slot {
 	display: flex;
 	justify-content: center;
-	height: 30px;
+	height: 35px;
 	width: 350px;
 	align-items: center;
-	border-bottom: solid #5cdafb 2px;
-	border-left: solid #5cdafb 2px;
+	border-bottom: solid #dbdbdb 2px;
+	border-left: solid #dbdbdb 2px;
+	border-top: solid #ff4848 2px;
+    border-right: solid #ff4848 2px;
 	border-radius: 12px;
-	margin-top: 40px;
+	margin: 3px;
 	background-color: #34363c;
-	font-size: 0.7em;
 	cursor: pointer;
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
@@ -48,15 +58,25 @@ section#c01s01 {
 	margin-top: 50px;
 }
 
+section#c01s02 {
+    margin: 5vh 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /* Dropdown Styling*/
 /*the container must be positioned relative:*/
 .autoComplete {
 	position: relative;
 	display: inline-block;
+	display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
 }
 
 .autoComplete-items {
-	position: static;
+	position: absolute;
 	border-bottom: none;
 	border-top: none;
 	z-index: 99;
@@ -64,6 +84,9 @@ section#c01s01 {
 	top: 100%;
 	left: 0;
 	right: 0;
+	height: 45vh;
+    overflow: scroll;
+	width: 83%;
 }
 
 .autoComplete-items div {
@@ -72,9 +95,12 @@ section#c01s01 {
 	justify-content: center;
 	width: 292px;
 	align-items: center;
-	border-bottom: solid #23afcc 1px;
-	border-left: solid #23afcc 3px;
-	border-radius: 0px 0px 8px 5px;
+	border-bottom: solid #dbdbdb 2px;
+	border-left: solid #dbdbdb 2px;
+	border-top: solid #ff4848 2px;
+    border-right: solid #ff4848 2px;
+	border-radius: 12px;
+	margin: 3px;
 	background-color: #34363c;
 	font-size: 0.8em;
 	cursor: pointer;
