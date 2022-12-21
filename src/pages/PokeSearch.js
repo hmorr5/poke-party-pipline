@@ -1,6 +1,6 @@
 import './assets/pages-style.css';
 import PokeBall from './assets/Pokeball-icon.svg';
-import './assets/autoFill.js';
+// import './assets/autoFill.js';
 
 function NameField() {
     return (

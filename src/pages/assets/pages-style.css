@@ -18,7 +18,11 @@
 
 input#pokeSearch{
 	margin: 0;
-	border-top-left-radius: 10px;
+	border-radius: 10px 0px 0px 0px;
+	border-bottom: solid #dbdbdb 2px;
+	border-left: solid #dbdbdb 2px;
+	border-top: solid #ff4848 2px;
+    border-right: solid #ff4848 2px;
 }
 
 input#pokeSearch:focus {
