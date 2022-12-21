@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import PokeSearchPage from './pages/PokeSearch';
+import PokeSearchPage from './pages/PokeSearch.jsx';
 
 function App() {
   return (

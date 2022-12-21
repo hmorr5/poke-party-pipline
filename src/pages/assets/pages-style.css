@@ -1,28 +1,15 @@
-.Main-PokeSearchPage {
+.PokeSearchSection {
 	display: flex;
-	padding-left: 5%;
-	padding-right: 5%;
 	justify-content: space-between;
+	width: 100vw;
 	max-width: 1920px;
 	background-color: hsl(220deg 13% 15%);
 	height: 75vh;
 }
 
-.PokeSearchSection {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	padding-left: 5%;
-	padding-right: 5%;
-}
-
 input#pokeSearch{
 	margin: 0;
 	border-radius: 10px 0px 0px 0px;
-	border-bottom: solid #dbdbdb 2px;
-	border-left: solid #dbdbdb 2px;
-	border-top: solid #ff4848 2px;
-    border-right: solid #ff4848 2px;
 }
 
 input#pokeSearch:focus {
@@ -63,7 +50,7 @@ section#c01s01 {
 }
 
 section#c01s02 {
-    margin: 5vh 5vw;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
