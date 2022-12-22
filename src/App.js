@@ -2,8 +2,16 @@
 import './App.css';
 import { getByDisplayValue } from '@testing-library/react';
 import Content01 from './assets/content_01.js'
+import Users from "./Storage/Users";
+import GetUsers from "./Storage/Users";
 
 function App() {
+
+  
+
+
+var SearchUser ="";
+
   return (
     <div className="App">
       <header id="47455" className="App-header">
@@ -17,6 +25,14 @@ function App() {
               > React! </span>
           <br /> and developing my own future with programming
         </p>
+        <input placeholder="Enter username..." onChange={(event) => { 
+          SearchUser = event.target.value;
+        }}>
+
+        </input>
+        <button onClick={GetUsers(SearchUser)}>Load User Parties</button>
+       
+
         <a
           className="App-link"
           href="https://reactjs.org"
