@@ -7,11 +7,6 @@ import GetUsers from "./Storage/Users";
 
 function App() {
 
-  
-
-
-var SearchUser ="";
-
   return (
     <div className="App">
       <header id="47455" className="App-header">
@@ -25,13 +20,7 @@ var SearchUser ="";
               > React! </span>
           <br /> and developing my own future with programming
         </p>
-        <input placeholder="Enter username..." onChange={(event) => { 
-          SearchUser = event.target.value;
-        }}>
-
-        </input>
-        <button onClick={GetUsers(SearchUser)}>Load User Parties</button>
-       
+       <Users/>
 
         <a
           className="App-link"

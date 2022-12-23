@@ -6,31 +6,60 @@ import { useState } from "react";
 
 //https://www.npoint.io/docs/70d6b9f336b117c7fa85
 
-function GetUsers(userName){
-const [UserPartyList, Party] = useState("");
+function GetUsers(){
+   
+const [UserPartyList, Party] = useState(null);
+const [searchValue, setSearchValue] = useState("");
 //userName = "Greg101";
-useEffect(() => {
+const fetchData = () => {
 axios.get("https://api.npoint.io/70d6b9f336b117c7fa85").then((res) => {
-//console.log(res.data);
+console.log(res.data);
 
-var results = res.data.filter(function(item) {
-    console.log(userName);
-    return item.Username == userName;
-});
 
-if(results.length > 0){
-    Party(res.data.Parties);
-    console.log(UserPartyList);
-    return UserPartyList;
-} else{
-    console.log("No User Found");
-    return "No User Found";
-}
+var checkExisting = res.data.filter(function(item) {
+    if(item.Username == searchValue){
+        console.log(item);
+        Party(item);
+        return "Success"
+    }
 
 });
-}, []);
 
+
+});
+};
+
+return (
+    <div className="GetUsersContainer">
+    <input id="nameCheck" placeholder="Enter username..." onChange={(event) => { 
+        setSearchValue(event.target.value);
+      }}>
+    
+      </input>
+      <button onClick={fetchData}>Load User Parties</button>
+      <br></br>
+      
+            <div className="Results">
+      <h4 id="results">User: {UserPartyList?.Username}</h4>
+      {UserPartyList?.Partys.map((Party, index) => {
+        return (
+          <div key={index}>
+            <h2>ID: {Party.PID}</h2>
+            <h2>Name: {Party.PName}</h2>
+
+            <hr />
+          </div>
+        );
+      })}
+      </div>
+     
+
+    </div>
+
+)
 
 }
+
+// <p>Party List: {UserPartyList?.Partys}</p>
 
 export default GetUsers;
