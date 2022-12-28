@@ -176,7 +176,7 @@ input[type="submit"], button{
   font-family: 'VT323', monospace;
   letter-spacing: 2px;
   border-width: 0px;
-  border-radius: 0px 8px 8px 0px ;
+  border-radius: 8px;
   text-transform: uppercase;
   background-color: #524E4D;
   color: #ffcb05;
