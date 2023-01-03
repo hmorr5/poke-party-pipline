@@ -1,7 +1,4 @@
-import Axios from "axios";
 import axios from "axios";
-import { useEffect } from "react";
-import { useInsertionEffect } from "react";
 import { useState } from "react";
 
 //https://www.npoint.io/docs/70d6b9f336b117c7fa85
@@ -113,8 +110,8 @@ return (
       
             <div className="Results">
             <h3> Party List</h3>
-            {UserPartyList.length > 0 && UserPartyList}
-              {UserPartyList.length < 1 && 
+            {UserPartyList?.length > 0 && UserPartyList}
+              {UserPartyList?.length < 1 && 
               <p> You've not got any parties yet</p>}
       </div>
     </div>

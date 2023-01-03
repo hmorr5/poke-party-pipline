@@ -2,7 +2,6 @@
 import './App.css';
 import Content01 from './pages/PokeSearch'
 import Users from "./Storage/Users";
-import GetUsers from "./Storage/Users";
 
 function App() {
 
