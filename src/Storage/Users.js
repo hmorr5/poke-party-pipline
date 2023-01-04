@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { useEffect } from "react";
 import searchinggif from "./Assets/giphy.webp";
+import suprisedpika from "./Assets/Ideas_Surprised_Pikachu_HD.webp";
 import "./storageStyle.css";
 
 //https://www.npoint.io/docs/70d6b9f336b117c7fa85
@@ -9,7 +11,7 @@ import "./storageStyle.css";
 function GetUsers(){
  
   const headers =  {
-    authorization: 'token 6b931ceb-21fb-49fc-a5c0-9a84c4f6e656',
+    authorization: 'token 6b931ceb-21fb-49fc-a5c0-9a84c4f6e656'
   }
 
 /*
@@ -61,9 +63,31 @@ function GetUsers(){
   fetch('https://jsonbin.org/me/users', {
     headers
   }).then(res => res.json()).then(res => {
-    //console.log(res);
+    console.log(res);
   });
 */
+ 
+
+  const [username, setUsername] = useState("");
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = loggedInUser;
+      setUser(foundUser);
+    }
+  }, []);
+
+   // logout the user
+   const handleLogout = () => {
+    setUser(null);
+    setUsername("");
+    localStorage.clear();
+  };
+
+
+
 const [UserPartyListData, Party] = useState(null);
 const [PartyError, setPartyError] = useState("");
 const [searchValue, setSearchValue] = useState("");
@@ -74,10 +98,16 @@ axios.get(`https://jsonbin.org/me/users/0/${searchValue}/`, {
 console.log(res.data.PartyList);
 Party(res.data.PartyList)
 setPartyError("");
+
+setUser(`${searchValue}`);
+// store the user in localStorage
+localStorage.setItem("user", `${searchValue}`);
+
+
 }).catch(function(e){
   console.log(e.response);
   if(e.response.status = "404"){
-    setPartyError(`Unable to find the user: ${searchValue}`);
+    setPartyError(`Unable to find the user: ${searchValue} `);
   }
   });
 };
@@ -96,6 +126,12 @@ const createUser = () => {
     console.log("Failed to find, so will try create new", error.toJSON());
     let newUser = Object();
     newUser[searchValue] = ({"PartyList": []});
+
+    
+    // store the user in localStorage
+    //setUser(`${searchValue}`);
+    //localStorage.setItem("user", `${searchValue}`);   
+
     axios.patch('https://jsonbin.org/me/users/0',newUser, {
     headers: {
       authorization: 'token 6b931ceb-21fb-49fc-a5c0-9a84c4f6e656',
@@ -103,14 +139,39 @@ const createUser = () => {
   }).catch(function (error) {
     setPartyError(`Adding new user ${searchValue} failed` , error.toJSON())
   }
-)
+).then((res)=>{
+  fetchData();
+})
   }).then((res) => {
 
   })
 }
 
+
+if (user) {
+  return (
+    <div>
+      {user} is loggged in
+      <button onClick={handleLogout}>logout</button>
+
+      <div className="Results">
+            
+            <h3> Party List</h3>
+            {!PartyError && UserPartyList?.length > 0 && UserPartyList}
+            {PartyError && <div><p>{PartyError}</p><img src={suprisedpika} className="searchGif"></img></div>}
+
+            {UserPartyList?.length < 1 || UserPartyList == null && !PartyError && 
+            <div><p> You've not got any parties yet </p><img src={searchinggif} className="searchGif"></img></div> }
+              
+              
+      </div>
+    </div>
+  );
+}
+
 return (
     <div className="GetUsersContainer">
+      <p>Search is case sensitive</p>
     <input id="nameCheck" placeholder="Enter username..." onChange={(event) => { 
         setSearchValue(event.target.value);
       }}>
@@ -123,7 +184,7 @@ return (
             
             <h3> Party List</h3>
             {!PartyError && UserPartyList?.length > 0 && UserPartyList}
-            <p>{PartyError}</p>
+            {PartyError && <div><p>{PartyError}</p><img src={suprisedpika} className="searchGif"></img></div>}
 
             {UserPartyList?.length < 1 || UserPartyList == null && !PartyError && 
               <div><p> You've not got any parties yet </p><img src={searchinggif} className="searchGif"></img></div> }
