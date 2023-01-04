@@ -4,9 +4,13 @@ import { useEffect } from "react";
 import searchinggif from "./Assets/giphy.webp";
 import suprisedpika from "./Assets/Ideas_Surprised_Pikachu_HD.webp";
 import "./storageStyle.css";
+import GetParty from "./Partys.js";
 
 //https://www.npoint.io/docs/70d6b9f336b117c7fa85
 //test
+
+
+
 
 function GetUsers(){
  
@@ -41,11 +45,25 @@ function GetUsers(){
     ]
   }
   }];
+*/
+/*
+const data = [{
+  "Fred001": {
+    "PartyName": "Blue",
+    "P1" : {
+      "Name": "Ditto",
+      "PokemonId": "001",
+      "Moves" : ["Move1", "Move2"]
+    },
+    "P2" : {
+      "Name": "Weedle",
+      "PokemonId": "002",
+      "Moves" : ["Move3", "Move4"]
+    }
+  }
+  }];
 
-
-
-
-  axios.post('https://jsonbin.org/me/users',data, {
+  axios.post('https://jsonbin.org/me/parties',data, {
     headers: {
       authorization: 'token 6b931ceb-21fb-49fc-a5c0-9a84c4f6e656',
     }
@@ -56,8 +74,8 @@ function GetUsers(){
   .catch(function (error) {
     console.log("Response error: ",error);
   });
-*/
 
+*/
 
 /*
   fetch('https://jsonbin.org/me/users', {
@@ -67,35 +85,23 @@ function GetUsers(){
   });
 */
  
-
-  const [username, setUsername] = useState("");
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
-    if (loggedInUser) {
-      const foundUser = loggedInUser;
-      setUser(foundUser);
-    }
-  }, []);
-
-   // logout the user
-   const handleLogout = () => {
-    setUser(null);
-    setUsername("");
-    localStorage.clear();
-  };
+const [username, setUsername] = useState("");
+const [user, setUser] = useState("");
 
 
 
-const [UserPartyListData, Party] = useState(null);
-const [PartyError, setPartyError] = useState("");
-const [searchValue, setSearchValue] = useState("");
+
+
+  const [UserPartyListData, Party] = useState(null);
+  const [PartyError, setPartyError] = useState("");
+  const [searchValue, setSearchValue] = useState(localStorage.getItem("user") || "");
+
+
 const fetchData = () => {
 axios.get(`https://jsonbin.org/me/users/0/${searchValue}/`, {
   headers
 }).then((res) => {
-console.log(res.data.PartyList);
+//console.log(res.data.PartyList);
 Party(res.data.PartyList)
 setPartyError("");
 
@@ -111,12 +117,17 @@ localStorage.setItem("user", `${searchValue}`);
   }
   });
 };
-
+/*
+const [state, setstate] = useState({id:""})
+<button onclick={setstate(data.partyid)}></button> 
+*/
 const UserPartyList = UserPartyListData?.map((data,id)=>{
   return <div key={id} data-partyid={data.PartyId}>
     <h4>{data.PartyName}</h4>
+    <button>{data.PartyId}</button> 
   </div>
 })
+
 
 const createUser = () => {
   axios.get(`https://jsonbin.org/me/users/0/${searchValue}/`, {
@@ -147,15 +158,30 @@ const createUser = () => {
   })
 }
 
+useEffect(() => {
+  const loggedInUser = localStorage.getItem("user");
+  if (loggedInUser) {
+    const foundUser = loggedInUser;
+    setUser(foundUser);
+    //fetchData();
+  }
+}, []);
+
+ // logout the user
+ const handleLogout = () => {
+  setUser(null);
+  setUsername("");
+  localStorage.clear();
+};
 
 if (user) {
+  //fetchData();
   return (
     <div>
-      {user} is loggged in
+      <p>{user} is loggged in</p>
       <button onClick={handleLogout}>logout</button>
-
       <div className="Results">
-            
+      
             <h3> Party List</h3>
             {!PartyError && UserPartyList?.length > 0 && UserPartyList}
             {PartyError && <div><p>{PartyError}</p><img src={suprisedpika} className="searchGif"></img></div>}
