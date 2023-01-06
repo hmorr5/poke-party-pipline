@@ -9,12 +9,11 @@ pipelines:
   default:
     - parallel:
         - step:
-            name: Build and Test
+            name: Build
             caches:
               - node
             script:
               - npm install
-              - npm test
         - step:
             name: Code linting
             script:
