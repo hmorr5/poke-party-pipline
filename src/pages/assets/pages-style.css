@@ -63,43 +63,36 @@ section#c01s02 {
 
 /* Dropdown Styling*/
 /*the container must be positioned relative:*/
-.autoComplete {
-	position: relative;
-	display: inline-block;
-	display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-}
-
 .autoComplete-items {
-	position: absolute;
-	border-bottom: none;
-	border-top: none;
-	z-index: 99;
-	/*position the autocomplete items to be the same width as the container:*/
-	top: 100%;
-	left: 0;
-	right: 0;
-	height: 45vh;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    height: 45vh;
     overflow: scroll;
-	width: 83%;
+    scroll-margin: 11px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+	padding: 10px;
 }
 
-.autoComplete-items div {
+.autoComplete-items>div {
     padding: 5px;
-	display: flex;
-	justify-content: center;
-	width: 292px;
-	align-items: center;
-	border-bottom: solid #dbdbdb 2px;
-	border-left: solid #dbdbdb 2px;
-	border-top: solid #ff4848 2px;
+    height: 30px;
+    display: flex;
+    width: fit-content;
+    border-bottom: solid #dbdbdb 2px;
+    border-left: solid #dbdbdb 2px;
+    border-top: solid #ff4848 2px;
     border-right: solid #ff4848 2px;
-	border-radius: 12px;
-	margin: 3px;
-	background-color: #34363c;
-	font-size: 0.8em;
-	cursor: pointer;
+    border-radius: 12px;
+    margin: 3px 5px;
+    background-color: #34363c;
+    font-size: 1em;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 /*when hovering an item:*/
@@ -115,4 +108,14 @@ section#c01s02 {
 
 div.autoComplete > input[type="submit"]{
 	border-radius: 0px 8px 8px 0px;
+}
+
+div.GetUsersContainer,
+header div 
+{
+    display: contents;
+}
+
+div.GetUsersContainer>button, header button{
+    width: 160px;
 }

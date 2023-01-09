@@ -3,6 +3,7 @@ import './assets/pages-style.css';
 import './assets/GenOnePokemon.json';
 import { ReactComponent as PokeBall } from './assets/Pokeball-icon.svg';
 import { ReactComponent as ClosedPokeBall } from './assets/Pokeball-icon-closed.svg';
+import AutoFill from './assets/AutoFill';
 
 export default function Content01() {
 
@@ -59,7 +60,7 @@ export default function Content01() {
 					Pokemon Search <br /> Search for your Pokemon!
 				</p>
 				<form onSubmit={onSubmit}>
-					<input placeholder='Search for your Pokemon' type={'search'} ref={inputRef} />
+					<input onChange={AutoFill} placeholder='Search for your Pokemon' id='pokeSearch' type={'search'} ref={inputRef} />
 					<button className="submit-button" type="submit">
 						Add
 					</button>
