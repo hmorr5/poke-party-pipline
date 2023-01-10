@@ -14,7 +14,6 @@ function App() {
             style={{ fontWeight: "600", color: "#61dafb" }}
             className="reactText"
           > React! </span>
-          <br /> and programming
         </p>
         <Users />
 

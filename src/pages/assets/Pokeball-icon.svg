@@ -1,6 +1,45 @@
-<svg id="top-ball" data-name="top-ball" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 900">
-    <path d="M10,100 C10,0 160,0 160,100 L160,100 Z" stroke="black" stroke-width="5" fill="red"></path>
-    <path d="M10,780 C10,880 160,880 160,780 Z" stroke="black" stroke-width="5" fill="whitesmoke"></path>
-    <circle cx="85" cy="100" r="20" stroke="black" stroke-width="4" fill="white"></circle>
-    <circle cx="85" cy="100" r="10" stroke="black" stroke-width="2" fill="white"></circle>
+<svg
+	id="top-ball"
+	data-name="top-ball"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 170 900"
+>
+	<g id="svgBallTop">
+		<path
+			id="topBallPart"
+			d="M10,100 C10,0 160,0 160,100 L160,100 Z"
+			stroke="black"
+			stroke-width="5"
+			fill="red"
+		/>
+	</g>
+	<g id="svgBallBottom">
+		<path
+			id="BottomBallPart"
+			d="M10,780 C10,880 160,880 160,780 Z"
+			stroke="black"
+			stroke-width="5"
+			fill="whitesmoke"
+		/>
+	</g>
+	<g id="PokeBallButton">
+		<circle
+			id="outerBallButton"
+			cx="85"
+			cy="100"
+			r="20"
+			stroke="black"
+			stroke-width="4"
+			fill="white"
+		/>
+		<circle
+			id="innerBallButton"
+			cx="85"
+			cy="100"
+			r="10"
+			stroke="black"
+			stroke-width="2"
+			fill="white"
+		/>
+	</g>
 </svg>

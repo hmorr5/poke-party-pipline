@@ -119,3 +119,13 @@ header div
 div.GetUsersContainer>button, header button{
     width: 160px;
 }
+
+#svgBallBottom{
+    transition-duration: 500ms;
+}
+
+#svgBallBottom-closed{
+    transition-duration: 500ms;
+    transform: translatey(-680px);
+}
+
