@@ -1,5 +1,11 @@
+:root{
+  --pokeYellow: #ffcb05;
+  --pokeRed: #ff4848;
+  --dbWhite:#dbdbdb;
+}
+
 h1,h2,h3,h4,h5,h6{
-  color: #ffcb05
+  color: var(--pokeYellow);
 }
 
 .App {
@@ -114,11 +120,11 @@ button{
   text-align: center;
   font-size: 1.5rem;
   border-radius: 60px;
-  background-color: #ff4848;
-  border-bottom: solid #dbdbdb 5px;
-	border-left: solid #dbdbdb 5px;
-	border-top: solid #ff4848 5px;
-  border-right: solid #ff4848 5px;
+  background-color: var(--pokeRed);
+  border-bottom: solid var(--dbWhite) 5px;
+	border-left: solid var(--dbWhite) 5px;
+	border-top: solid var(--pokeRed) 5px;
+  border-right: solid var(--pokeRed) 5px;
   transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.22, 0.6, 0.85, 0.6);
 }
@@ -130,9 +136,9 @@ button:hover{
 }
 
 button[type="submit"]:active {
-  background-color: #dbdbdb;
-  color: #e94244;
-  border-color: #ff4848;
+  background-color: var(--dbWhite);
+  color: var(--pokeRed);
+  border-color: var(--pokeRed);
   transition:auto;
 }
 
