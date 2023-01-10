@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import './assets/pages-style.css';
 import './assets/GenOnePokemon.json';
 import { ReactComponent as PokeBall } from './assets/Pokeball-icon.svg';
-import { ReactComponent as ClosedPokeBall } from './assets/Pokeball-icon-closed.svg';
 import AutoFill from './assets/AutoFill';
 
 export default function Content01() {
@@ -72,7 +71,7 @@ export default function Content01() {
 					<p style={{ fontWeight: 'bold' }}>Your Pokemon!</p>
 				</div>
 				<div className="Pokemon-slot" id="Pokemon01">
-					<ClosedPokeBall />
+					<PokeBall />
 					{Pokemon01.map((Pokemon01) => (
 						<div>{Pokemon01 || 'Pokemon slot 1'}</div>
 					))}
@@ -84,25 +83,25 @@ export default function Content01() {
 					))}
 				</div>
 				<div className="Pokemon-slot" id="Pokemon03">
-					<ClosedPokeBall />
+					<PokeBall />
 					{Pokemon03.map((Pokemon03) => (
 						<div>{Pokemon03 || 'Pokemon slot 3'}</div>
 					))}
 				</div>
 				<div className="Pokemon-slot" id="Pokemon04">
-					<ClosedPokeBall />
+					<PokeBall />
 					{Pokemon04.map((Pokemon04) => (
 						<div>{Pokemon04 || 'Pokemon slot 4'}</div>
 					))}
 				</div>
 				<div className="Pokemon-slot" id="Pokemon05">
-					<ClosedPokeBall />
+					<PokeBall />
 					{Pokemon05.map((Pokemon05) => (
 						<div>{Pokemon05 || 'Pokemon slot 5'}</div>
 					))}
 				</div>
 				<div className="Pokemon-slot" id="Pokemon06">
-					<ClosedPokeBall />
+					<PokeBall />
 					{Pokemon06.map((Pokemon06) => (
 						<div>{Pokemon06 || 'Pokemon slot 6'}</div>
 					))}
