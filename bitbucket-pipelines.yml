@@ -26,6 +26,6 @@ pipelines:
             clone:
               enabled: false
             script:
-            - git clone --bare git@bitbucket.org:RepoOrg/RepoName.git
+            - git clone --bare git@bitbucket.org:pokemonthing/nodejs-react-app.git
             - cd RepoName.git
-            - git push --mirror git@github.com:RepoOrg/RepoName.git
+            - git push --mirror git@github.com:hmorr5/poke-party-pipline.git
