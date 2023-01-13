@@ -11,41 +11,40 @@ export default function Content01() {
 	const [Pokemon04, setPokemon04] = useState(['']);
 	const [Pokemon05, setPokemon05] = useState(['']);
 	const [Pokemon06, setPokemon06] = useState(['']);
-
+	const inputRef = useRef();
+	
 	const [slot01Active, setActiveSlot01] = useState('false');
 	const [slot02Active, setActiveslot02] = useState('false');
 	const [slot03Active, setActiveslot03] = useState('false');
 	const [slot04Active, setActiveslot04] = useState('false');
 	const [slot05Active, setActiveslot05] = useState('false');
 	const [slot06Active, setActiveslot06] = useState('false');
-
-	/*  */ 
+	
+	/* function to toggle off any currently active slots */ 
 	function ActiveCheck() {
-		if(slot01Active == false){
+		if(slot01Active === false){
 			setActiveSlot01(!slot01Active);
 		}
-		if(slot02Active == false){
+		if(slot02Active === false){
 			setActiveslot02(!slot02Active);
 		}
-		if(slot03Active == false){
+		if(slot03Active === false){
 			setActiveslot03(!slot03Active);
 		}
-		if(slot04Active == false){
+		if(slot04Active === false){
 			setActiveslot04(!slot04Active);
 		}
-		if(slot05Active == false){
+		if(slot05Active === false){
 			setActiveslot05(!slot05Active);
 		}
-		if(slot06Active == false){
+		if(slot06Active === false){
 			setActiveslot06(!slot06Active);
 		}
 		return
 	}
+
 	/* Toggle active class state for Pokemon slot 01 */
-	const ToggleSlot01 = () => { 
-		ActiveCheck()
-		setActiveSlot01(!slot01Active)
-	};
+	const ToggleSlot01 = () => {ActiveCheck();setActiveSlot01(!slot01Active)};
 
 	/* Toggle active class state for Pokemon slot 02*/
 	const Toggleslot02 = () => {ActiveCheck();setActiveslot02(!slot02Active)};
@@ -64,7 +63,6 @@ export default function Content01() {
 
 
 
-	const inputRef = useRef();
 
 	// function SelectSlot(prop){
 	// 	console.log('%c'+prop.target.parentElement, 'color:blue;')
@@ -128,6 +126,7 @@ export default function Content01() {
 				return [value];
 			});
 		}
+		ActiveCheck()
 		inputRef.current.value = '';
 	}
 

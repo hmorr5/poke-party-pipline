@@ -92,8 +92,7 @@ section#c01s02 {
     border-top: none;
     z-index: 99;
     height: 45vh;
-    overflow: scroll;
-    scroll-margin: 11px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
