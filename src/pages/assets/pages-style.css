@@ -34,7 +34,6 @@
 }
 
 .active > div {
-    z-index: 0;
     color: var(--pokeYellow);
 }
 
@@ -58,6 +57,13 @@
 
 .Pokemon-slot:hover {
 	background-color: #524e4d;
+}
+
+.selectorSpace{
+    width: 38%;
+    z-index: 2;
+    height: 70px;
+    position: absolute;
 }
 
 section {
