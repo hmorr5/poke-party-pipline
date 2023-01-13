@@ -158,42 +158,42 @@ export default function Content01() {
 					<div onClick={ToggleSlot01} className="selectorSpace"></div>
 					<PokeBall />
 					{Pokemon01.map((Pokemon01) => (
-						<div>{Pokemon01 || 'Pokemon slot 1'}</div>
+						<div className="setPokemon" >{Pokemon01 || 'Pokemon slot 1'}</div>
 					))}
 				</div>
 				<div className={`Pokemon-slot ${slot02Active ? '' : 'active'}`} id="Pokemon02">
 					<div onClick={Toggleslot02} className="selectorSpace"></div>
 					<PokeBall />
 					{Pokemon02.map((Pokemon02) => (
-						<div>{Pokemon02 || 'Pokemon slot 2'}</div>
+						<div className="setPokemon" >{Pokemon02 || 'Pokemon slot 2'}</div>
 					))}
 				</div>
 				<div className={`Pokemon-slot ${slot03Active ? '' : 'active'}`} id="Pokemon03">
 					<div onClick={Toggleslot03} className="selectorSpace"></div>
 					<PokeBall />
 					{Pokemon03.map((Pokemon03) => (
-						<div>{Pokemon03 || 'Pokemon slot 3'}</div>
+						<div className="setPokemon" >{Pokemon03 || 'Pokemon slot 3'}</div>
 					))}
 				</div>
 				<div className={`Pokemon-slot ${slot04Active ? '' : 'active'}`} id="Pokemon04">
 					<div onClick={Toggleslot04} className="selectorSpace"></div>
 					<PokeBall />
 					{Pokemon04.map((Pokemon04) => (
-						<div>{Pokemon04 || 'Pokemon slot 4'}</div>
+						<div className="setPokemon" >{Pokemon04 || 'Pokemon slot 4'}</div>
 					))}
 				</div>
 				<div className={`Pokemon-slot ${slot05Active ? '' : 'active'}`} id="Pokemon05">
 					<div onClick={Toggleslot05} className="selectorSpace"></div>
 					<PokeBall />
 					{Pokemon05.map((Pokemon05) => (
-						<div>{Pokemon05 || 'Pokemon slot 5'}</div>
+						<div className="setPokemon" >{Pokemon05 || 'Pokemon slot 5'}</div>
 					))}
 				</div>
 				<div className={`Pokemon-slot ${slot06Active ? '' : 'active'}`} id="Pokemon06">
 					<div onClick={Toggleslot06} className="selectorSpace"></div>
 					<PokeBall />
 					{Pokemon06.map((Pokemon06) => (
-						<div>{Pokemon06 || 'Pokemon slot 6'}</div>
+						<div className="setPokemon" >{Pokemon06 || 'Pokemon slot 6'}</div>
 					))}
 				</div>
 			</section>
