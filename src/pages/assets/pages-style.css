@@ -1,16 +1,16 @@
-:root{
-    --pokeYellow: #ffcb05;
-    --pokeRed: #ff4848;
-    --dbWhite:#dbdbdb;
+:root {
+	--pokeYellow: #ffcb05;
+	--pokeRed: #ff4848;
+	--dbWhite: #dbdbdb;
 }
 
 .PokeSearchSection {
-    display: flex;
-    justify-content: space-around;
-    max-width: 100%;
-    background-color: hsl(220deg 13% 15%);
-    height: 110%;
-    align-items: flex-start;
+	display: flex;
+	justify-content: space-around;
+	max-width: 100%;
+	background-color: hsl(220deg 13% 15%);
+	height: 110%;
+	align-items: flex-start;
 }
 
 .Pokemon-slot {
@@ -18,12 +18,12 @@
 	justify-content: center;
 	height: 70px;
 	width: 400px;
-    color: grey;
+	color: grey;
 	align-items: center;
-	border-bottom: solid #dbdbdb 4px;
-	border-left: solid #dbdbdb 4px;
-	border-top: solid #ff4848 4px;
-    border-right: solid #ff4848 4px;
+	border-bottom: solid var(--dbWhite) 4px;
+	border-left: solid var(--dbWhite) 4px;
+	border-top: solid var(--pokeRed) 4px;
+	border-right: solid var(--pokeRed) 4px;
 	border-radius: 45px;
 	margin: 3px;
 	background-color: #34363c;
@@ -34,88 +34,88 @@
 }
 
 .active > div {
-    color: var(--pokeYellow);
+	color: var(--pokeYellow);
 }
 
-.Pokemon-slot>svg {
-    max-height: 461px;
-    position: absolute;
-    z-index: 1;
-    rotate: -90deg;
-    padding-top: 9px;
+.Pokemon-slot > svg {
+	max-height: 461px;
+	position: absolute;
+	z-index: 1;
+	rotate: -90deg;
+	padding-top: 9px;
 }
 
-.Pokemon-slot.active > svg > g#svgBallBottom{
-    transition-duration: 500ms;
-    transform: translateY(0px);
+.Pokemon-slot.active > svg > g#svgBallBottom {
+	transition-duration: 500ms;
+	transform: translateY(0px);
 }
 
-#svgBallBottom{
-    transition-duration: 500ms;
-    transform: translateY(-680px);
+#svgBallBottom {
+	transition-duration: 500ms;
+	transform: translateY(-680px);
 }
 
 .Pokemon-slot:hover {
 	background-color: #524e4d;
 }
 
-.selectorSpace{
-    width: 420px;
-    z-index: 2;
-    height: 70px;
-    position: absolute;
+.selectorSpace {
+	width: 420px;
+	z-index: 2;
+	height: 70px;
+	position: absolute;
 }
 
 section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin: 40px 40px;
 }
 
 section#c01s01 {
-	display: flex;
-	width: 60%;
 	flex-direction: column;
+	width: 60%;
 	padding: 10px 10px;
 }
 
 section#c01s02 {
-	display: flex;
+	flex-direction: column;
 	width: 40%;
-    flex-direction: column;
-    padding: 10px 10px;
-    justify-content: space-between;
+	padding: 10px 10px;
 }
 
 /* Dropdown Styling*/
 /*the container must be positioned relative:*/
 .autoComplete-items {
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    height: 45vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	height: 45vh;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: flex-start;
 	padding: 10px;
 }
 
-.autoComplete-items>div {
-    padding: 5px;
-    height: 30px;
-    display: flex;
-    width: fit-content;
-    border-bottom: solid #dbdbdb 2px;
-    border-left: solid #dbdbdb 2px;
-    border-top: solid #ff4848 2px;
-    border-right: solid #ff4848 2px;
-    border-radius: 12px;
-    margin: 3px 5px;
-    background-color: #34363c;
-    font-size: 1em;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
+.autoComplete-items > div {
+	padding: 5px;
+	height: 30px;
+	display: flex;
+	width: fit-content;
+	border-bottom: solid var(--dbWhite) 2px;
+	border-left: solid var(--dbWhite) 2px;
+	border-top: solid var(--pokeRed) 2px;
+	border-right: solid var(--pokeRed) 2px;
+	border-radius: 12px;
+	margin: 3px 5px;
+	background-color: #34363c;
+	font-size: 1em;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
 }
 
 /*when hovering an item:*/
@@ -129,17 +129,54 @@ section#c01s02 {
 	color: #ffffff;
 }
 
-div.autoComplete > input[type="submit"]{
+div.autoComplete > input[type='submit'] {
 	border-radius: 0px 8px 8px 0px;
 }
 
 div.GetUsersContainer,
-header div 
-{
-    display: contents;
+header div {
+	display: contents;
 }
 
-div.GetUsersContainer>button, header button{
-    width: 160px;
+div.GetUsersContainer > button,
+header button {
+	width: 160px;
 }
 
+@media screen and (max-width: 1250px) {
+	section#c01s01 {
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+    .Pokemon-slot:hover {
+        background-color: #34363c;
+    }
+	.PokeSearchSection {
+		flex-direction: column;
+	}
+	.Pokemon-slot {
+		width: 80%;
+		max-width: 300px;
+		padding: 0px;
+		margin: 5px;
+        height: 50px;
+	}
+	.Pokemon-slot > svg {
+		display: none;
+	}
+	div.selectorSpace {
+		width: 80%;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	section#c01s02 {
+		padding: 0px;
+		width: 100%;
+        margin: 0px;
+	}
+}

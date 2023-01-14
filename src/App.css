@@ -75,6 +75,7 @@ form{
   margin-top: 50px;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .Main-Content {
@@ -89,7 +90,8 @@ input{
   display: flex;
 	justify-content: center;
 	height: 50px;
-	width: 500px;
+	width: 80%;
+	max-width: 500px;
 	margin: 3px;
 	border-bottom: solid #dbdbdb 2px;
 	border-left: solid #dbdbdb 2px;
@@ -125,20 +127,16 @@ button{
 	border-left: solid var(--dbWhite) 5px;
 	border-top: solid var(--pokeRed) 5px;
   border-right: solid var(--pokeRed) 5px;
-  transition-duration: 100ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.22, 0.6, 0.85, 0.6);
 }
 
-button:hover{
-  box-shadow: inset #000000d4 1px 1px 9px 3px;
-  transition-duration: 200ms;
-  text-align: center;
-}
-
 button[type="submit"]:active {
+  box-shadow: inset #000000d4 1px 1px 9px 3px;
   background-color: var(--dbWhite);
   color: var(--pokeRed);
   border-color: var(--pokeRed);
+  transition-duration: 500ms;
   transition:auto;
 }
 
