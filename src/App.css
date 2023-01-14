@@ -140,4 +140,14 @@ button[type="submit"]:active {
   transition:auto;
 }
 
+div.Results{
+  border: solid #00000042 5px;
+  border-radius: 25px;
+  display: block;
+  width: 40%;
+  padding: 40px;
+  margin: 50px;
+  background-color: #00000042;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
