@@ -50,13 +50,6 @@ div[class*="container_pokeSlot"]:hover {
 	background-color: #524e4d;
 }
 
-.selectorSpace {
-	width: 420px;
-	z-index: 2;
-	height: 70px;
-	position: absolute;
-}
-
 section {
 	display: flex;
 	justify-content: space-between;
@@ -68,60 +61,6 @@ section#c01s01 {
 	flex-direction: column;
 	width: 60%;
 	padding: 10px 10px;
-}
-
-section#c01s02 {
-	flex-direction: column;
-	width: 40%;
-	padding: 10px 10px;
-}
-
-/* Dropdown Styling*/
-/*the container must be positioned relative:*/
-.autoComplete-items {
-	border-bottom: none;
-	border-top: none;
-	z-index: 99;
-	height: 45vh;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	padding: 10px;
-}
-
-.autoComplete-items > div {
-	padding: 5px;
-	height: 30px;
-	display: flex;
-	width: fit-content;
-	border-bottom: solid var(--dbWhite) 2px;
-	border-left: solid var(--dbWhite) 2px;
-	border-top: solid var(--pokeRed) 2px;
-	border-right: solid var(--pokeRed) 2px;
-	border-radius: 12px;
-	margin: 3px 5px;
-	background-color: #34363c;
-	font-size: 1em;
-	cursor: pointer;
-	align-items: center;
-	justify-content: center;
-}
-
-/*when hovering an item:*/
-.autoComplete-items div:hover {
-	background-color: #524e4d;
-}
-
-/*when navigating through the items using the arrow keys:*/
-.autoComplete-active {
-	background-color: DodgerBlue !important;
-	color: #ffffff;
-}
-
-div.autoComplete > input[type='submit'] {
-	border-radius: 0px 8px 8px 0px;
 }
 
 div.GetUsersContainer,
