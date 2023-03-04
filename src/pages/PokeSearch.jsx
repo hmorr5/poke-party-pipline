@@ -1,177 +1,25 @@
-import { useRef, useState } from 'react';
 import './assets/pages-style.css';
 import './assets/GenOnePokemon.json';
-import { ReactComponent as PokeBall } from './assets/Pokeball-icon.svg';
-import AutoFill from './assets/AutoFill';
+import Pokeslot from './assets/Pokeslot';
 
 export default function Content01() {
-
-	//#region functions controling the active classes for the pokemon Slots
-	// Use states for toggling the active class
-	const [slot01Active, setActiveSlot01] = useState('false');
-	const [slot02Active, setActiveslot02] = useState('false');
-	const [slot03Active, setActiveslot03] = useState('false');
-	const [slot04Active, setActiveslot04] = useState('false');
-	const [slot05Active, setActiveslot05] = useState('false');
-	const [slot06Active, setActiveslot06] = useState('false');
-
-	/* function to toggle off any currently active slots */
-	function ActiveCheck() {
-		if (slot01Active === false) {
-			setActiveSlot01(!slot01Active);
-		}
-		if (slot02Active === false) {
-			setActiveslot02(!slot02Active);
-		}
-		if (slot03Active === false) {
-			setActiveslot03(!slot03Active);
-		}
-		if (slot04Active === false) {
-			setActiveslot04(!slot04Active);
-		}
-		if (slot05Active === false) {
-			setActiveslot05(!slot05Active);
-		}
-		if (slot06Active === false) {
-			setActiveslot06(!slot06Active);
-		}
-		return;
-	}
-
-	//#region individual pokemon slot active class Toggles
-
-	/* The onClick functions to toggle activate the active class state toggle */
-	const ToggleSlot01 = () => {
-		ActiveCheck();
-		setActiveSlot01(!slot01Active);
-	};
-	const Toggleslot02 = () => {
-		ActiveCheck();
-		setActiveslot02(!slot02Active);
-	};
-	const Toggleslot03 = () => {
-		ActiveCheck();
-		setActiveslot03(!slot03Active);
-	};
-	const Toggleslot04 = () => {
-		ActiveCheck();
-		setActiveslot04(!slot04Active);
-	};
-	const Toggleslot05 = () => {
-		ActiveCheck();
-		setActiveslot05(!slot05Active);
-	};
-	const Toggleslot06 = () => {
-		ActiveCheck();
-		setActiveslot06(!slot06Active);
-	};
-
-	//#endregion
-	//#endregion
-
-
-	//#region functions for adding the submitted values to the pokemon slots 
-	const [Pokemon01, setPokemon01] = useState(['']);
-	const [Pokemon02, setPokemon02] = useState(['']);
-	const [Pokemon03, setPokemon03] = useState(['']);
-	const [Pokemon04, setPokemon04] = useState(['']);
-	const [Pokemon05, setPokemon05] = useState(['']);
-	const [Pokemon06, setPokemon06] = useState(['']);
-	const inputRef = useRef();
-
-	function onSubmit(e) {
-		e.preventDefault();
-		console.log('onSubmit e value:' + e);
-		const value = inputRef.current.value;
-		if (value === '') return;
-		if (
-			document.getElementById('Pokemon01').getAttribute('class') ===
-			'Pokemon-slot active'
-		) {
-			setPokemon01((prev) => {
-				return [value];
-			});
-		}
-		if (
-			document.getElementById('Pokemon02').getAttribute('class') ===
-			'Pokemon-slot active'
-		) {
-			setPokemon02((prev) => {
-				return [value];
-			});
-		}
-		if (
-			document.getElementById('Pokemon03').getAttribute('class') ===
-			'Pokemon-slot active'
-		) {
-			setPokemon03((prev) => {
-				return [value];
-			});
-		}
-		if (
-			document.getElementById('Pokemon04').getAttribute('class') ===
-			'Pokemon-slot active'
-		) {
-			setPokemon04((prev) => {
-				return [value];
-			});
-		}
-		if (
-			document.getElementById('Pokemon05').getAttribute('class') ===
-			'Pokemon-slot active'
-		) {
-			setPokemon05((prev) => {
-				return [value];
-			});
-		}
-		if (
-			document.getElementById('Pokemon06').getAttribute('class') ===
-			'Pokemon-slot active'
-		) {
-			setPokemon06((prev) => {
-				return [value];
-			});
-		}
-		ActiveCheck(); //this makes all slots in-active after submission  
-		inputRef.current.value = ''; //makes sure the field is empty after submitting 
-	}
-	//#endregion
-
-
-
 	return (
 		<div className="PokeSearchSection">
 			<section id="c01s01">
-				<p>
-					Pokemon Search <br /> Search for your Pokemon!
-				</p>
-				<form onSubmit={onSubmit}>
-					<input
-						onChange={AutoFill}
-						placeholder="Search for your Pokemon"
-						id="pokeSearch"
-						type={'search'}
-						ref={inputRef}
-					/>
-					<button className="submit-button" type="submit">
-						Add
-					</button>
-				</form>
+				<button className="submit-button" type="submit">
+					Add
+				</button>
 			</section>
 
 			<section id="c01s02">
 				<div className="title">
 					<p style={{ fontWeight: 'bold' }}>Your Pokemon!</p>
 				</div>
-				<div
-					className={`Pokemon-slot ${slot01Active ? '' : 'active'}`}
-					id="Pokemon01"
-				>
+				<Pokeslot n="01" />
+				{/* <div className={`Pokemon-slot ${slot01Active ? '' : 'active'}`} id="Pokemon01">
 					<div onClick={ToggleSlot01} className="selectorSpace"></div>
 					<PokeBall />
-					{Pokemon01.map((Pokemon01) => (
-						<div className="setPokemon">{Pokemon01 || 'Pokemon slot 1'}</div>
-					))}
+					{Pokemon01.map((Pokemon01) => (<div className="setPokemon">{Pokemon01 || 'Pokemon slot 1'}</div>))}
 				</div>
 				<div
 					className={`Pokemon-slot ${slot02Active ? '' : 'active'}`}
@@ -222,7 +70,7 @@ export default function Content01() {
 					{Pokemon06.map((Pokemon06) => (
 						<div className="setPokemon">{Pokemon06 || 'Pokemon slot 6'}</div>
 					))}
-				</div>
+				</div> */}
 			</section>
 		</div>
 	);

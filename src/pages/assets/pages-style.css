@@ -4,16 +4,7 @@
 	--dbWhite: #dbdbdb;
 }
 
-.PokeSearchSection {
-	display: flex;
-	justify-content: space-around;
-	max-width: 100%;
-	background-color: hsl(220deg 13% 15%);
-	height: 110%;
-	align-items: flex-start;
-}
-
-.Pokemon-slot {
+div[class*="container_pokeSlot"] {
 	display: flex;
 	justify-content: center;
 	height: 70px;
@@ -37,7 +28,7 @@
 	color: var(--pokeYellow);
 }
 
-.Pokemon-slot > svg {
+div[class*="container_pokeSlot"] > svg {
 	max-height: 461px;
 	position: absolute;
 	z-index: 1;
@@ -45,7 +36,7 @@
 	padding-top: 9px;
 }
 
-.Pokemon-slot.active > svg > g#svgBallBottom {
+div[class*="container_pokeSlot"].active > svg > g#svgBallBottom {
 	transition-duration: 500ms;
 	transform: translateY(0px);
 }
@@ -55,7 +46,7 @@
 	transform: translateY(-680px);
 }
 
-.Pokemon-slot:hover {
+div[class*="container_pokeSlot"]:hover {
 	background-color: #524e4d;
 }
 
@@ -152,20 +143,20 @@ header button {
 }
 
 @media screen and (max-width: 900px) {
-    .Pokemon-slot:hover {
+    div[class*="container_pokeSlot"]:hover {
         background-color: #34363c;
     }
 	.PokeSearchSection {
 		flex-direction: column;
 	}
-	.Pokemon-slot {
+	div[class*="container_pokeSlot"] {
 		width: 80%;
 		max-width: 300px;
 		padding: 0px;
 		margin: 5px;
         height: 50px;
 	}
-	.Pokemon-slot > svg {
+	div[class*="container_pokeSlot"] > svg {
 		display: none;
 	}
 	div.selectorSpace {
@@ -179,4 +170,38 @@ header button {
 		width: 100%;
         margin: 0px;
 	}
+}
+
+input[id*='input-pokeSlot']{
+	height: inherit;
+    width: 92%;
+    background-color: #34363c00;
+    font-family: 'VT323', monospace;
+    font-size: 1.2em;
+    text-align: center;
+    padding-left: 38px;
+	margin: 0;
+    border: none;
+	z-index: 200;
+}
+
+input[id*='input-pokeSlot']:focus{
+    color: #f9cb33;
+}
+
+input:focus-visible {
+    border: none;
+    outline: none;
+    height: inherit;
+}
+
+form:has(input[id*='input-pokeSlot']){
+	margin-top:0;
+	display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: end;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: flex-end;
 }
