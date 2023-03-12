@@ -150,4 +150,9 @@ div.Results{
   background-color: #00000042;
 }
 
+.title{
+  display: block;
+  position:relative;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ReactComponent as PokeBall } from '../assets/Pokeball-icon.svg';
+import { ReactComponent as PokeBall } from '../Images/Pokeball-icon.svg';
 
 //#region functions for adding the submitted values to the pokemon slots
 
@@ -57,6 +57,7 @@ export default function Pokeslot(props) {
 					id={`input-${pn}`}
 					type={'search'}
 					ref={inputRef}
+					autocomplete="off"
 					className={`${pn} ${slotActive ? '' : 'active'}`}
 				/>
 			</form>
@@ -64,11 +65,3 @@ export default function Pokeslot(props) {
 		</div>
 	);
 }
-
-/*
-<div className={`Pokemon-slot ${slot01Active ? '' : 'active'}`} id="Pokemon01">
-	<div onClick={ToggleSlot01} className="selectorSpace"></div>
-	<PokeBall />
-	{Pokemon01.map((Pokemon01) => (<div className="setPokemon">{Pokemon01 || 'Pokemon slot 1'}</div>))}
-</div>
-*/
