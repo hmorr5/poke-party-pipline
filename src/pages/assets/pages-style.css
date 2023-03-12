@@ -50,13 +50,6 @@ div[class*='container_pokeSlot']:hover {
 	background-color: #524e4d;
 }
 
-section {
-	justify-content: space-between;
-	align-items: center;
-	margin: 40px 40px;
-	padding: 10px 10px;
-}
-
 div.GetUsersContainer,
 header div {
 	display: contents;

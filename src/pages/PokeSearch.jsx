@@ -9,7 +9,6 @@ export default function Content01() {
 				<h1 className="title">
 					<strong>Your Pokemon!</strong>
 				</h1>
-				<div>
 				<div class="pokemonParty-Container">
 					<div class="partyGridZone1"><Pokeslot n="01" /></div>
 					<div class="partyGridZone2"><Pokeslot n="02" /></div>
@@ -23,7 +22,6 @@ export default function Content01() {
 					<div class="partyGridZone10"></div>
 					<div class="partyGridZone11"></div>
 					<div class="partyGridZone12"></div>
-				</div>
 				</div>
 			</section>
 		</div>
