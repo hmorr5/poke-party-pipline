@@ -68,6 +68,14 @@ body {
   /* color: #61dafb; */
 }
 
+section {
+	justify-content: space-between;
+	align-items: center;
+	margin: 40px 40px;
+	padding: 10px 10px;
+  width: 100%;
+}
+
 form{
   display: flex;
   justify-content: center;
@@ -150,4 +158,16 @@ div.Results{
   background-color: #00000042;
 }
 
+.title{
+  display: block;
+  position:relative;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.PokeSearchSection {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

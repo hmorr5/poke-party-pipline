@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
-import { ReactComponent as PokeBall } from '../assets/Pokeball-icon.svg';
-import AutoFill from './AutoFill';
+import { ReactComponent as PokeBall } from '../Images/Pokeball-icon.svg';
 
 //#region functions for adding the submitted values to the pokemon slots
 
@@ -36,8 +35,8 @@ export default function Pokeslot(props) {
 		const value = inputRef.current.value;
 		if (value === '') return;
 		if (
-			document.querySelector('[id^="pokeSlot"]').getAttribute('class') ===
-			`Pokemon-slot ${pn} active`
+			document.getElementById(`input-${pn}`).getAttribute('class') ===
+			`${pn} active`
 		) {
 			setPokemon((prev) => {
 				return [value];
@@ -52,26 +51,17 @@ export default function Pokeslot(props) {
 	return (
 		<div className={`container_${pn}`}>
 			<form id={`form-${pn}`} onSubmit={onSubmit}>
-				<div className="selectorSpace"></div>
 				<input
 					onSelect={ToggleSlot}
-					onChange={AutoFill}
 					placeholder="Search your Pokemon"
 					id={`input-${pn}`}
 					type={'search'}
 					ref={inputRef}
-					className={`autoComplete-items Pokemon-slot ${pn} ${slotActive ? '' : 'active'}`}
+					autocomplete="off"
+					className={`${pn} ${slotActive ? '' : 'active'}`}
 				/>
 			</form>
 			<PokeBall />
 		</div>
 	);
 }
-
-/*
-<div className={`Pokemon-slot ${slot01Active ? '' : 'active'}`} id="Pokemon01">
-	<div onClick={ToggleSlot01} className="selectorSpace"></div>
-	<PokeBall />
-	{Pokemon01.map((Pokemon01) => (<div className="setPokemon">{Pokemon01 || 'Pokemon slot 1'}</div>))}
-</div>
-*/
