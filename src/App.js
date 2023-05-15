@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import Content01 from './pages/PokeSearch'
+import Content01 from './pages/party/PokeSearch'
 import Users from "./Storage/Users";
 
 function App() {

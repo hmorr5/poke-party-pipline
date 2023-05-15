@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ReactComponent as PokeBall } from '../Images/Pokeball-icon.svg';
+import { ReactComponent as PokeBall } from '../Assets/svg/Pokeball-icon.svg';
 
 //#region functions for adding the submitted values to the pokemon slots
 
