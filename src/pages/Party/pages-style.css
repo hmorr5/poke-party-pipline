@@ -94,15 +94,15 @@ header button {
 
 input[id*='input-pokeSlot'] {
 	height: inherit;
-	width: 92%;
+	width: 93%;
 	background-color: #34363c00;
 	font-family: 'VT323', monospace;
 	font-size: 1.2em;
 	text-align: center;
-	padding-left: 38px;
 	margin: 0;
 	border: none;
 	z-index: 200;
+	color: #dbdbdb;
 }
 
 input[id*='input-pokeSlot']:focus {
