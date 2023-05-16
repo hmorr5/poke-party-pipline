@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { ReactComponent as PokeBall } from '../Assets/svg/Pokeball-icon.svg';
+import pokemonList from '../../Storage/Assets/PokemonList.json'
 
 //#region functions for adding the submitted values to the pokemon slots
 
@@ -7,8 +8,6 @@ import { ReactComponent as PokeBall } from '../Assets/svg/Pokeball-icon.svg';
 
 export default function Pokeslot(props) {
 	//#region Variables
-	let pokemon = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"];
-	const [setPokemon, setPokemonValue] = useState(['']);
 	const [slotActive, setActiveSlot] = useState('false');
 	const inputRef = useRef();
 	const pn = 'pokeSlot' + props.n.toString();
@@ -33,16 +32,12 @@ export default function Pokeslot(props) {
 	//#region Toggle all PokeSlots to false on submit
 	function onSubmit(e) {
 		e.preventDefault();
-		const value = inputRef.current.value;
-		if (value === '') {return}
-		if (
-			document.getElementById(`input-${pn}`).getAttribute('class') ===
-			`${pn} active`
-		){
-			setPokemonValue((prev) => {
-				return [value];
-			});
-		}
+		const pokeValue = inputRef.current.value;
+		const pokemons = Object.values(pokemonList.pokemon.Gen1);
+		const validPokemon = pokemons.find(pokemon => pokemon === pokeValue);
+		if (validPokemon) {console.log(pokeValue+' entered')}
+		else if (pokeValue === ''){return console.warn('Pokeballs do not catch empty pokemon')}
+		else {return console.error('Not a Pokemon')}
 		inputRef.current.value = ''; //makes sure the field is empty after submitting
 	}
 	//#endregion

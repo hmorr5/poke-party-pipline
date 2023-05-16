@@ -11,3 +11,200 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* CSS Anthony */
+:root {
+	--pokeYellow: #ffcb05;
+	--pokeRed: #ff4848;
+	--dbWhite: #dbdbdb;
+}
+
+div[class*='container_pokeSlot'] {
+	display: flex;
+	justify-content: center;
+	height: 70px;
+	width: 400px;
+	color: grey;
+	align-items: center;
+	border-bottom: solid var(--dbWhite) 4px;
+	border-left: solid var(--dbWhite) 4px;
+	border-top: solid var(--pokeRed) 4px;
+	border-right: solid var(--pokeRed) 4px;
+	border-radius: 45px;
+	margin: 3px;
+	background-color: #34363c;
+	cursor: pointer;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
+.active > div {
+	color: var(--pokeYellow);
+}
+
+div[class*='container_pokeSlot'] > svg {
+	max-height: 461px;
+	position: absolute;
+	z-index: 1;
+	rotate: -90deg;
+	padding-top: 9px;
+}
+
+div[class*='container_pokeSlot'].active > svg > g#svgBallBottom {
+	transition-duration: 500ms;
+	transform: translateY(0px);
+}
+
+#svgBallBottom {
+	transition-duration: 500ms;
+	transform: translateY(-680px);
+}
+
+div[class*='container_pokeSlot']:hover {
+	background-color: #524e4d;
+}
+
+div.GetUsersContainer,
+header div {
+	display: contents;
+}
+
+div.GetUsersContainer > button,
+header button {
+	width: 160px;
+}
+
+@media screen and (max-width: 1250px) {
+	section#c01s01 {
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	div[class*='container_pokeSlot']:hover {
+		background-color: #34363c;
+	}
+	.PokeSearchSection {
+		flex-direction: column;
+	}
+	div[class*='container_pokeSlot'] {
+		width: 80%;
+		max-width: 300px;
+		padding: 0px;
+		margin: 5px;
+		height: 50px;
+	}
+	div[class*='container_pokeSlot'] > svg {
+		display: none;
+	}
+	div.selectorSpace {
+		width: 80%;
+		padding: 0px;
+		margin: 0px;
+	}
+}
+
+input[id*='input-pokeSlot'] {
+	height: inherit;
+	width: 93%;
+	background-color: #34363c00;
+	font-family: 'VT323', monospace;
+	font-size: 1.2em;
+	text-align: center;
+	margin: 0;
+	border: none;
+	z-index: 200;
+	color: #dbdbdb;
+}
+
+input[id*='input-pokeSlot']:focus {
+	color: #f9cb33;
+}
+
+input:focus-visible {
+	border: none;
+	outline: none;
+	height: inherit;
+}
+
+form:has(input[id*='input-pokeSlot']) {
+	margin-top: 0;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	align-items: end;
+	flex-wrap: nowrap;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.pokemonParty-Container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr 2fr 1fr 2fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 10px;
+	justify-items: center;
+}
+
+.partyGridZone1 {
+	grid-area: 1 / 1 / 2 / 2;
+}
+.partyGridZone2 {
+	grid-area: 1 / 2 / 2 / 3;
+}
+.partyGridZone3 {
+	grid-area: 1 / 3 / 2 / 4;
+}
+.partyGridZone4 {
+	grid-area: 2 / 1 / 3 / 2;
+	width: 94%;
+    background-color: #80808024;
+    border-radius: 25px;
+}
+.partyGridZone5 {
+	grid-area: 2 / 2 / 3 / 3;
+	width: 94%;
+    background-color: #80808024;
+    border-radius: 25px;
+}
+.partyGridZone6 {
+	grid-area: 2 / 3 / 3 / 4;
+	width: 94%;
+    background-color: #80808024;
+    border-radius: 25px;
+}
+.partyGridZone7 {
+	grid-area: 3 / 1 / 4 / 2;
+}
+.partyGridZone8 {
+	grid-area: 3 / 2 / 4 / 3;
+}
+.partyGridZone9 {
+	grid-area: 3 / 3 / 4 / 4;
+}
+.partyGridZone10 {
+	grid-area: 4 / 1 / 5 / 2;
+	width: 94%;
+    background-color: #80808024;
+    border-radius: 25px;
+}
+.partyGridZone11 {
+	grid-area: 4 / 2 / 5 / 3;
+	width: 94%;
+    background-color: #80808024;
+    border-radius: 25px;
+}
+.partyGridZone12 {
+	grid-area: 4 / 3 / 5 / 4;
+	width: 94%;
+    background-color: #80808024;
+    border-radius: 25px;
+}
+
+div.active>svg>g>circle#innerBallButton {
+    fill: red;
+}

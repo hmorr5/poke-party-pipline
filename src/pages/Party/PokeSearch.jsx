@@ -1,5 +1,5 @@
-import './pages-style.css';
-import '../../Storage/GenOnePokemon.json';
+import '../../index.css';
+import '../../Storage/Assets/PokemonList.json';
 import Pokeslot from '../../Storage/Components/Pokeslot.jsx';
 
 export default function Content01() {
