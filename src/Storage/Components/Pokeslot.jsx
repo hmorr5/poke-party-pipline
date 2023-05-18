@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { ReactComponent as PokeBall } from '../Assets/svg/Pokeball-icon.svg';
-import pokemonList from '../../Storage/Assets/PokemonList.json'
+import pokemonList from '../Assets/PokemonList.json'
+import {SetParty} from '../../pages/Party/PokeSearch.jsx'
 
 //#region functions for adding the submitted values to the pokemon slots
 
@@ -11,6 +12,7 @@ export default function Pokeslot(props) {
 	const [slotActive, setActiveSlot] = useState('false');
 	const inputRef = useRef();
 	const pn = 'pokeSlot' + props.n.toString();
+	const [Chosen, SetChosen] = useState(false);
 	//#endregion
 
 	//#region Check if active, then toggle off any currently active slots
@@ -35,29 +37,35 @@ export default function Pokeslot(props) {
 		const pokeValue = inputRef.current.value;
 		const pokemons = Object.values(pokemonList.pokemon.Gen1);
 		const validPokemon = pokemons.find(pokemon => pokemon === pokeValue);
-		if (validPokemon) {console.log(pokeValue+' entered')}
-		else if (pokeValue === ''){return console.warn('Pokeballs do not catch empty pokemon')}
-		else {return console.error('Not a Pokemon')}
+		if (validPokemon) {SetChosen(true); ToggleSlot(); SetParty(props.n,pokeValue); return}
+		else if (pokeValue === ''){console.info('Pokeballs do not catch empty pokemon')}
+		else {alert('That is not a valid Pokemon Ash...')}
 		inputRef.current.value = ''; //makes sure the field is empty after submitting
 	}
 	//#endregion
 
+	const NotChosen = () => {SetChosen(false)}
+
 //#region Pokemon Slot fields
 	return (
-		<div className={`container_${pn} ${slotActive ? '' : 'active'}`}>
-			<form id={`form-${pn}`} onSubmit={onSubmit}>
+		<div className={`container_${pn} ${!slotActive ? '' : 'active'}`}>
+			<form id={`form-${pn}`} onSubmit={(e) => {
+				e.preventDefault();
+				onSubmit(e);
+				}}>
 				<input
-					onFocus={ToggleSlot}
-					onBlur={ToggleSlot}
+					//onFocus={ToggleSlot}
+					//onBlur={ToggleSlot}
 					placeholder="Search your Pokemon"
 					id={`input-${pn}`}
 					type={'search'}
 					ref={inputRef}
 					autoComplete="off"
 					className={`${pn}`}
+					disabled={!slotActive}
 				/>
 			</form>
-			<PokeBall />
+			<PokeBall onClick={ToggleSlot} />
 		</div>
 	);
 //#endregion

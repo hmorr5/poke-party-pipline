@@ -22,7 +22,7 @@
 			fill="whitesmoke"
 		/>
 	</g>
-	<g id="PokeBallButton">
+	<g id="PokeBallButton" >
 		<circle
 			id="outerBallButton"
 			cx="85"
