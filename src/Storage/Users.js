@@ -203,7 +203,9 @@ return (
       }}>
     
       </input>
+      <div id="UsersButtons">
       <button onClick={fetchData}>Load User Parties</button><button id="createParty" onClick={createUser}>Click here to create</button>
+      </div>  
       <br></br>
       
             <div className="Results">

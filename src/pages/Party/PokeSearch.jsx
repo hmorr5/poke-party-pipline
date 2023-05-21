@@ -10,6 +10,7 @@ console.info("Party "+Party)
 export function SetParty(Slot, Pokemon){
 	Party[Slot-1] = Pokemon;
 	console.log(Party)
+	
 };
 
 export default function Content01() {

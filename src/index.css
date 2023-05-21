@@ -77,10 +77,36 @@ div[class*='container_pokeSlot'].active > svg > g#svgBallBottom {
 	cursor: unset;
 }
 
+section#UserLogin {
+    transform: translateY(0px);
+    transition-duration: 2s;
+}
+
+section#UserLogin.hide {
+    transform: translateY(-110VH);
+    transition-duration: 2s;
+}
+
+#CloseButton {
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #000000;
+    border-radius: 25%;
+    scale: 0.8;
+    border-width: 3px;
+}
 
 div.GetUsersContainer,
 header div {
-	display: contents;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+	padding: 10px;
 }
 
 div.GetUsersContainer > button,
@@ -237,4 +263,26 @@ g#PokeBallButton {
 
 div.active>svg>g>circle#outerBallButton {
     fill: rgb(244, 170, 170);
+}
+
+section#UserLogin {
+    margin: 3vh 10vh;
+    background: black;
+    display: flex;
+    position: fixed;
+    z-index: 300;
+    border: solid 4px black;
+    border-radius: 24px;
+    padding: 25px;
+    width: 80%;
+    height: fit-content;
+    border-bottom: solid var(--dbWhite) 4px;
+    border-left: solid var(--dbWhite) 4px;
+    border-top: solid var(--pokeRed) 4px;
+    border-right: solid var(--pokeRed) 4px;
+    box-shadow: -9px 14px 13px 0px #130a0a96;
+    top: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }

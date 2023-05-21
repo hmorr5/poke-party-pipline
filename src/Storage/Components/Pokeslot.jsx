@@ -12,7 +12,6 @@ export default function Pokeslot(props) {
 	const [slotActive, setActiveSlot] = useState('false');
 	const inputRef = useRef();
 	const pn = 'pokeSlot' + props.n.toString();
-	const [Chosen, SetChosen] = useState(false);
 	//#endregion
 
 	//#region Check if active, then toggle off any currently active slots
@@ -37,14 +36,13 @@ export default function Pokeslot(props) {
 		const pokeValue = inputRef.current.value;
 		const pokemons = Object.values(pokemonList.pokemon.Gen1);
 		const validPokemon = pokemons.find(pokemon => pokemon === pokeValue);
-		if (validPokemon) {SetChosen(true); ToggleSlot(); SetParty(props.n,pokeValue); return}
+		if (validPokemon) {ToggleSlot(); SetParty(props.n,pokeValue); return}
 		else if (pokeValue === ''){console.info('Pokeballs do not catch empty pokemon')}
 		else {alert('That is not a valid Pokemon Ash...')}
 		inputRef.current.value = ''; //makes sure the field is empty after submitting
 	}
 	//#endregion
 
-	const NotChosen = () => {SetChosen(false)}
 
 //#region Pokemon Slot fields
 	return (

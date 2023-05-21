@@ -137,9 +137,10 @@ button{
   border-right: solid var(--pokeRed) 5px;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.22, 0.6, 0.85, 0.6);
+  cursor: pointer;
 }
 
-button[type="submit"]:active {
+button:active {
   box-shadow: inset #000000d4 1px 1px 9px 3px;
   background-color: var(--dbWhite);
   color: var(--pokeRed);
