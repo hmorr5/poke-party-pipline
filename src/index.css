@@ -77,14 +77,16 @@ div[class*='container_pokeSlot'].active > svg > g#svgBallBottom {
 	cursor: unset;
 }
 
+
+/* User Screen CSS options  */
 section#UserLogin {
     transform: translateY(0px);
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 
 section#UserLogin.hide {
-    transform: translateY(-110VH);
-    transition-duration: 2s;
+    transition-duration: 1s;
+    transform: translateY(-110VH) scale(0.01);
 }
 
 #CloseButton {
@@ -113,6 +115,7 @@ div.GetUsersContainer > button,
 header button {
 	width: 160px;
 }
+/* End of User screen CSS options */
 
 /* Media Tag for Smaller Screens */
 @media screen and (max-width: 1250px) {
@@ -158,12 +161,7 @@ input[id*='input-pokeSlot'] {
 	margin: 0;
 	border: none;
 	z-index: 20;
-	color: #dbdbdb;
-	padding-right: 30px;
-}
-
-input[id*='input-pokeSlot'] {
-	color: #f9cb33;
+	text-transform: capitalize;
 }
 
 .active input[id*='input-pokeSlot'] {

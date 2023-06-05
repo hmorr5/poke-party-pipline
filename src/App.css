@@ -80,10 +80,9 @@ form{
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 50px;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
 }
 
 .Main-Content {

@@ -1,9 +1,9 @@
+//#region Imports
 import { useRef, useState } from 'react';
 import { ReactComponent as PokeBall } from '../Assets/svg/Pokeball-icon.svg';
 import pokemonList from '../Assets/PokemonList.json'
-import {SetParty} from '../../pages/Party/PokeSearch.jsx'
-
-//#region functions for adding the submitted values to the pokemon slots
+import { SetParty } from '../../pages/Party/PokeSearch.jsx'
+//#endregion
 
 //-----------------------------------
 
@@ -30,30 +30,28 @@ export default function Pokeslot(props) {
 	};
 	//#endregion
 
-	//#region Toggle all PokeSlots to false on submit
+	//#region Function to submit value in the PokeSlot field.
 	function onSubmit(e) {
-		e.preventDefault();
+		e.preventDefault(); //prevents the function from reloading the DOM
 		const pokeValue = inputRef.current.value;
 		const pokemons = Object.values(pokemonList.pokemon.Gen1);
-		const validPokemon = pokemons.find(pokemon => pokemon === pokeValue);
-		if (validPokemon) {ToggleSlot(); SetParty(props.n,pokeValue); return}
-		else if (pokeValue === ''){console.info('Pokeballs do not catch empty pokemon')}
-		else {alert('That is not a valid Pokemon Ash...')}
-		inputRef.current.value = ''; //makes sure the field is empty after submitting
+		const validPokemon = pokemons.find(pokemon => pokemon.toLocaleLowerCase() === pokeValue.toLocaleLowerCase());
+		if (validPokemon) { ToggleSlot(); SetParty(props.n, pokeValue); return }//If pokemon matches a pokemon in the json file, return the pokemon.
+		else if (pokeValue === '') { console.info('Pokeballs do not catch empty pokemon') }//If field is empty then console log "Pokeballs do not catch empty pokemon".
+		else { alert('That is not a valid Pokemon Ash...') }//If the value in the field does not match a pokemon in the json file, then show an alert.
+		inputRef.current.value = '';//makes sure the field is empty after submitting.
 	}
 	//#endregion
 
 
-//#region Pokemon Slot fields
+	//#region Pokemon Slot HTML JSX of the field.
 	return (
 		<div className={`container_${pn} ${!slotActive ? '' : 'active'}`}>
 			<form id={`form-${pn}`} onSubmit={(e) => {
-				e.preventDefault();
+				e.preventDefault();//Prevents the DOM from reloading.
 				onSubmit(e);
-				}}>
+			}}>
 				<input
-					//onFocus={ToggleSlot}
-					//onBlur={ToggleSlot}
 					placeholder="Search your Pokemon"
 					id={`input-${pn}`}
 					type={'search'}
@@ -66,5 +64,5 @@ export default function Pokeslot(props) {
 			<PokeBall onClick={ToggleSlot} />
 		</div>
 	);
-//#endregion
+	//#endregion
 }
